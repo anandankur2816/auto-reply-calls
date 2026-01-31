@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Phone icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30
+            C45,30 36,34 30,42
+            L34,46
+            C38.5,39.5 45.5,35 54,35
+            C62.5,35 69.5,39.5 74,46
+            L78,42
+            C72,34 63,30 54,30Z" />
+    
+    <!-- Message bubble -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,55
+            L68,55
+            C71,55 73,57 73,60
+            L73,72
+            C73,75 71,77 68,77
+            L50,77
+            L44,83
+            L44,77
+            L40,77
+            C37,77 35,75 35,72
+            L35,60
+            C35,57 37,55 40,55Z" />
+    
+    <!-- Dots in bubble converted to paths -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M47,63 A3,3 0 1,0 47,69 A3,3 0 1,0 47,63" />
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M54,63 A3,3 0 1,0 54,69 A3,3 0 1,0 54,63" />
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M61,63 A3,3 0 1,0 61,69 A3,3 0 1,0 61,63" />
+</vector>
