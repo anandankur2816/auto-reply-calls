@@ -73,7 +73,7 @@ Without this app, callers are left wondering if you're ignoring them. **Auto Rep
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/auto-reply-calls.git
+git clone https://github.com/anandankur2816/auto-reply-calls.git
 cd auto-reply-calls
 
 # Build debug APK
