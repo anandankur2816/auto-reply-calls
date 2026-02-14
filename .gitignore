@@ -35,6 +35,7 @@ Thumbs.db
 *.jks
 *.keystore
 release-key.jks
+keystore.properties
 
 # Proguard
 proguard/

@@ -1,9 +1,13 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
+
     namespace = "com.autoreply.calls"
     compileSdk = 34
 
@@ -15,14 +19,20 @@ android {
         versionName = "1.0"
     }
 
+    // 🔐 Load keystore.properties safely
+    val keystorePropertiesFile = rootProject.file("keystore.properties")
+    val keystoreProperties = Properties()
+
+    if (keystorePropertiesFile.exists()) {
+        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+    }
+
     signingConfigs {
         create("release") {
-            storeFile = file("release-key.jks")
-            // Use environment variables for CI/CD (GitHub Actions)
-            // For local builds, you can set these in your environment or use gradle.properties
-            storePassword = System.getenv("SIGNING_STORE_PASSWORD") ?: ""
-            keyAlias = System.getenv("SIGNING_KEY_ALIAS") ?: "key0"
-            keyPassword = System.getenv("SIGNING_KEY_PASSWORD") ?: ""
+            storeFile = rootProject.file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
         }
     }
 
@@ -50,6 +60,7 @@ android {
         viewBinding = true
     }
 }
+
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
